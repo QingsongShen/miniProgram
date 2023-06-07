@@ -1,0 +1,168 @@
+/* pages/eat/eat.wxss */
+page {
+  height: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80rpx;
+  background-image: url("http://rvo2ad1hx.hn-bkt.clouddn.com/background/bg_eat.jpg?e=1685781954&token=WSIghlxaBfEDP9BELjGLqUpf1DiVe6Wg7NFnbQMK:nKqCN6tEJZ0Vnss9eopznGjnEJY=");
+  background-size: 100% 100%;
+}
+
+.lottery {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 700rpx;
+  /* height: 500rpx; */
+  /* background-color: peachpuff; */
+}
+.lottery .roll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+  width: 500rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  background-color:hotpink;
+  opacity: 0.3;
+}
+.lottery .operation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600rpx;
+  height: 100rpx;
+  /* background-color: #fff; */
+}
+.lottery .operation button {
+  /* background-color: springgreen; */
+  height: 80rpx;
+  width: 200rpx;
+  border-radius: 100rpx;
+}
+
+.lottery .displayZoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600rpx;
+  height: 100rpx;
+  /* background-color: blue; */
+}
+
+
+.dishMan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50rpx;
+  /* justify-content: center; */
+  width: 700rpx;
+  /* height: 1000rpx;
+  background-color: red; */
+}
+
+.dishMan .displayDish {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  width: 600rpx;
+  height: auto;
+  /* background-color: blue; */
+}
+
+.menuTitle {
+  display: flex;
+  flex-direction: row;
+  width: 600rpx;
+  height: 70rpx;
+  line-height: 50rpx;
+  background-color: lightgrey;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.arrow {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  /* transform: rotate(90deg); */
+  transition: transform 0.3s ease;
+}
+
+.dishMan .displayDish .menuItem {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rpx;
+  max-height: 300rpx;
+  width: 550rpx;
+  /* background-color: thistle; */
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  /* padding-left: 20rpx; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rpx 0 5rpx 15rpx;
+  border-radius: 10rpx;
+}
+.items:nth-child(even){
+  background-color: darkgrey;
+}
+.items:nth-child(odd){
+  background-color: white;
+}
+
+.items button {
+  padding: 0;
+  margin: 0 50rpx 0 0;
+  font-size: 20rpx;
+  width: 50rpx;
+  height: 30rpx;
+}
+
+.addDish {
+  display: flex;
+  flex-direction: column;
+  height: 400rpx;
+  width: 600rpx;
+  /* background-color: blueviolet; */
+}
+
+.addDish .dishBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  width: 600rpx;
+  /* background-color: cyan; */
+}
+.addDish .dishBox input {
+  width: 500rpx;
+  height: 70rpx;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  background-color:rgb(252, 210, 241);
+}
+.submit {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  font-size: small;
+  width: 600rpx;
+  justify-content: space-around;
+}
+.submit button {
+  padding: 10rpx;
+  font-size: small;
+  border-radius: 10rpx;
+  width: 200rpx;
+}

@@ -1,0 +1,55 @@
+<!--pages/eat/eat.wxml-->
+<view class="container">
+  <!-- 抽奖区 -->
+  <view class="lottery">
+    <!-- 滚动区 -->
+    <view class="roll">
+      <view class="dishName">
+        <text>{{result}}</text>
+      </view>
+    </view>
+    <!-- 操作区 -->
+    <view class="operation">
+      <button type="primary" bindtap="getDish">抽取</button>
+    </view>
+    <!-- 展示区 -->
+    <view class="displayZoom">
+      <text>{{welcome}}{{finallDish}}</text>
+    </view>
+  </view>
+  <!-- 菜品管理 -->
+  <view class="dishMan">
+    <!-- 展示区 + 删除 -->
+    <view class="displayDish">
+      <view class="menuTitle" bindtap="menuToggler" data-index="0">
+        <image class="arrow" src="./img/arrow.svg" style='{{isOpen[0] ? "transform: rotate(90deg);" : ""}}' mode=""/>
+        <text>菜单列表</text>
+      </view>
+      <scroll-view scroll-y="true"  class="menuItem">
+        <block wx:for="{{dishName}}" wx:for-index="idx" wx:key="index">
+          <view class="items" wx:if="{{isOpen[0]}}">
+            <text>{{item}}</text>
+            <button type = "warn" data-index = "{{idx}}" bindtap="dishDelete">删除</button>
+          </view>
+        </block>
+      </scroll-view>
+            
+    </view>
+    <!-- 添加菜品 -->
+    <view class="addDish">
+      <view class="menuTitle" bindtap="menuToggler" data-index="1">
+        <image class="arrow" src="./img/arrow.svg" style='{{isOpen[1] ? "transform: rotate(90deg);" : ""}}' mode=""/>
+        <text>添加菜品</text>
+      </view>
+      <view class="dishBox" wx:if="{{isOpen[1]}}">
+        <input type="text" bindinput="dishName" placeholder="请输入菜名:" value="{{tempDishName}}" />
+        <view class="submit">
+          <button type="primary" bindtap="dishSubmit">添加</button>
+          <button type="warn" bindtap="resetInput">重置</button>
+        </view>
+        
+        
+      </view>
+    </view>
+  </view>
+</view>

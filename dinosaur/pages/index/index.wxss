@@ -1,0 +1,62 @@
+/**index.wxss**/
+page {
+  height: 100%;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  font-size: medium;
+  margin-top: 50rpx;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-image: url("http://rvo2ad1hx.hn-bkt.clouddn.com/background/bg.jpg?e=1685781954&token=WSIghlxaBfEDP9BELjGLqUpf1DiVe6Wg7NFnbQMK:riRm-YDgDfSLgaNl4Tu-YVTxkLg=");
+  background-size: 100% 100%;
+}
+
+.app_wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 700rpx;
+  /* background-color: red; */
+  justify-content: space-around;
+  margin: auto;
+}
+
+.app_item {
+  display: flex;
+  width: 400rpx;
+  height: 120rpx; 
+  border-radius: 50rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: plum;
+  
+}
+
+.copyright {
+  margin-bottom: 20rpx;
+  font-size: small;
+}
+
+.hover{
+
+  background-color: gray;
+
+}

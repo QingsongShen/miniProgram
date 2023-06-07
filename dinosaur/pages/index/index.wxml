@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <!-- 支持的程序列表 -->
+  <view class="app_wrapper">
+    <navigator class="app_item" url="../eat/eat" hover-class="hover">这顿吃点啥？</navigator>
+    <navigator class="app_item" url="#" hover-class="hover" bindtap="reminder">今天穿点啥？</navigator>
+    <navigator class="app_item" url="#" hover-class="hover" bindtap="reminder">今天玩点啥？</navigator>  
+  </view>
+  <view class="copyright">
+    <text>{{copyright}}</text>
+  </view>
+</view>

@@ -1,0 +1,19 @@
+<!--pages/about/about.wxml-->
+<view class="container">
+  <view class="version">
+    <text>版本：V1.0</text>
+  </view>
+  <view class="author">
+    <text>作者：小恐龙</text>
+    <image src="./img/猫爪.svg" mode=""/>
+  </view>
+  <view class="email">
+    <text>email：sqsgoodluck@qq.com</text>
+  </view>
+  <view class="blogs">
+    <text>博客园：www.cnblogs.com/sqsgoodluck</text>
+  </view>
+  <view class="self-page">
+    
+  </view>
+</view>

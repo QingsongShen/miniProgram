@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/eat/eat",
+        "pages/diancan/diancan",
+        "pages/us/us",
+        "pages/about/about",
+        "pages/test/test"
+    ],
+    "tabBar":{
+      "selectedColor": "#fc5531",
+      "list":[
+        {
+          "pagePath": "pages/index/index",
+          "text": "主页",
+          "iconPath": "./image/home.png",
+          "selectedIconPath": "./image/home_active.png"
+        },
+        {
+          "pagePath": "pages/us/us",
+          "text": "我们",
+          "iconPath": "./image/user.png",
+          "selectedIconPath": "./image/user_active.png"
+        },
+        {
+          "pagePath": "pages/diancan/diancan",
+          "text": "点餐",
+          "iconPath": "./image/food.png",
+          "selectedIconPath": "./image/food_active.png"
+        },
+        {
+          "pagePath": "pages/about/about",
+          "text": "关于",
+          "iconPath": "./image/about.png",
+          "selectedIconPath": "./image/about_active.png"
+        }
+      ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
