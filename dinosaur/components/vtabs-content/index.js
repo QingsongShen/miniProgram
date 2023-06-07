@@ -14,7 +14,7 @@ Component({
     },
   },  
   relations: {
-    '../vtabs/vtabs': {
+    '../vtabs/index': {
       type: 'parent'
     }
   },
@@ -33,6 +33,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    calcHeight: function calcHeight(callback) {
+      var query = this.createSelectorQuery();
+      query.select('.vtabs-content__item').boundingClientRect(function (rect) {
+          callback && callback(rect);
+      }).exec();
+  }
   }
 })

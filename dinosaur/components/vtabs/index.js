@@ -31,11 +31,19 @@ Component({
     _heightRecords: [],
     _contentHeight: {}
   },
+  relations: {
+    "../vtabs-content/index": {
+      type: "child"
+    } 
+  },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    // 左侧导航栏分类点击函数
+    handleTabClick: function(){
+      
+    }
   }
 })

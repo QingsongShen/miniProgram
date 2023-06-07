@@ -1,3 +1,8 @@
 /* components/vtabs-content/index.wxss */
-
+.vtabs-content__item {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+}
 

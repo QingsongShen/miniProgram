@@ -1,4 +1,4 @@
 <!--components/vtabs-content/index.wxml-->
-<view class = "weui-vtabs-content__item" id="weui-vtabs-content__{{tabIndex}}">
+<view class = "vtabs-content__item" id="vtabs-content__{{tabIndex}}">
   <slot ></slot>
 </view>
