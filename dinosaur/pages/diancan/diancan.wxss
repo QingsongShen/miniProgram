@@ -1,1 +1,205 @@
 /* pages/diancan/diancan.wxss */
+.container {
+  padding-top: 150rpx;
+}
+.shop {
+  width: 100%;
+  padding-left: 60rpx;
+}
+.navBg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -999;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  position: absolute;
+  top: 65rpx;
+}
+.title image {
+  height: 50rpx;
+  width: 50rpx;
+}
+.title text {
+  margin-left: 15rpx;
+  font-size: large;
+}
+
+/* 主体样式 */
+.shopWrapper {
+  width: 100%;
+  height: auto;
+  background-color: limegreen;
+  border-radius: 40rpx; 
+}
+
+/* 活动区样式 */
+.events {
+  display: flex;
+  flex-direction: row;
+  font-size: small;
+  padding: 50rpx 30rpx 0 30rpx;
+}
+
+.events  .eventsList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.eventsList .eventsLogo {
+  height: 35rpx;
+  margin: 0 10rpx;
+}
+.eventsList .eventsLogo image {
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.events .ventsItemsWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.events .eventsItem {
+  width: 100rpx;
+  height: 35rpx;
+  border: solid 1rpx lightcoral;
+  border-radius: 10rpx;
+  text-align: center;
+  margin-right: 10rpx;
+}
+
+/* 通知区样式 */
+.notices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: small;
+  padding: 10rpx 30rpx 0 30rpx;
+}
+.noticeMark {
+  line-height: 50rpx;
+}
+
+.notices .noticeList {
+  margin-right: 45rpx;
+  height: 50rpx;
+  background-color: brown;
+  /* overflow: hidden; */
+  transition: 0.3s ease;
+}
+
+.noticeList .noticesItem {
+  line-height: 50rpx;
+}
+
+.noticeArrow image {
+  height: 50rpx;
+  width: 50rpx;
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+
+/* 点餐区样式 */
+/* 左侧当行栏 */
+.order {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.dishCate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200rpx;
+  /* height: 600rpx; */
+  background-color: blueviolet;
+}
+.dishCate .cateName {
+  width: 180rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top: 10rpx;
+  background-color: cyan;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* 右侧菜品 */
+.active {
+  background-color: gray !important;
+}
+.dishItem {
+  padding-left: 20rpx;
+  max-height: 800rpx;
+}
+.itemWrapper {
+  width: 530rpx;
+  /* height: 400rpx; */
+  background-color: darkgoldenrod;
+}
+.itemWrapper .itemCate {
+  font-size: small;
+  color: grey;
+}
+
+.items {
+  /* height: 300rpx; */
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  background-color: mediumvioletred;
+}
+.items .img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+}
+
+.items .itemInfo {
+  margin-left: 10rpx;
+  width: 340rpx;
+}
+.itemInfo .itemTitle {
+  font-weight: bolder;
+}
+.itemInfo .itemDescription {
+  font-size: small;
+  line-height: 70rpx;
+}
+.itemInfo .itemPrice {
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.moneyLogo {
+  font-size: small;
+  margin-right: 5rpx;
+}
+
+.itemPrice .addCart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.addCart .dishCount {
+  margin: 0 10rpx;
+}
+.addCart .subtractLogo, .addLogo {
+  height: 40rpx;
+  width: 40rpx;
+}
+

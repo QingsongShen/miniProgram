@@ -12,3 +12,53 @@
     </mp-vtabs-content>
   </block>
 </mp-vtabs>
+
+
+
+
+
+<!-- 左侧标题导航条 -->
+<scroll-view scroll-y="true"  class="dishCate">
+        <block wx:for="{{dishName}}" wx:key="index" >
+          <view class="cateName {{item.active ? 'active': ''}}"  bindtap="onCategoryTap" data-index="{{index}}">
+          <text>{{item.cate}}</text>          
+          </view>
+        </block>
+        
+        
+      </scroll-view>
+      <!-- 右侧具体内容 -->
+      <scroll-view scroll-y="true" class="dishItem" scroll-into-view="{{scrollIntoView}}" scroll-with-animation="{{scrollWithAnimation}}" bindscroll="onDishScroll">
+        <view class="itemWrapper" wx:for="{{dishName}}" wx:key="index">
+          <view class="itemCate" id="{{'item' + index}}">
+            {{item.cate}}
+          </view>
+          <view class="items"  wx:for="{{item.items}}" wx:for-item="subItem" wx:key="index">
+            <image class="img" src="{{subItem.img}}" mode=""/>
+            <view>
+              <view class="itemInfo">
+                <view class="itemTitle">
+                  {{subItem.title}}
+                </view>
+                <view class="itemDescription">
+                  {{subItem.description}}
+                </view>
+                <view class="itemPrice">
+                  <!-- 菜品金额 -->
+                  <view class="money">
+                    <text class="moneyLogo">¥</text>
+                    <text class="rmb">{{subItem.price}}</text>
+                  </view> 
+                  <!-- 加入购物车 -->
+                  <view class="addCart">
+                    <image class="subtractLogo" src="./img/subtract.svg" mode=""/>
+                    <text class="dishCount">0</text>
+                    <image class="addLogo" src="./img/add.svg" mode=""/>                 
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </scroll-view>

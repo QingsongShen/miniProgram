@@ -1,2 +1,83 @@
 <!--pages/diancan/diancan.wxml-->
-<text>pages/diancan/diancan.wxml</text>
+<view class="container">
+  <!-- 头部店铺名称 -->
+  <view class="shop">
+    <image class="navBg" src="http://rvo2ad1hx.hn-bkt.clouddn.com/background/bg-meal.png" mode=""/>
+    <view class="title">
+      <image src="./img/shop.svg" mode=""/>
+      <text>{{shopTitle}}</text>
+    </view>
+  </view>
+  <!-- 主体部分 -->
+  <view class="shopWrapper">
+    <!-- 公告区 -->
+    <view class="noticeWrapper">
+      <view class="noticeContent">
+      <!-- 活动展示 -->
+        <view class="events">
+          <view class="noticeMark">
+            <text>活动：</text>
+          </view>
+          <view class="eventsList">
+            <view class="eventsLogo">
+              <image src="{{notices.events.logoPath[0]}}" mode=""/>
+            </view>
+            <view class="ventsItemsWrapper">
+              <block wx:for="{{notices.events.contents}}" wx:for-index="eventsIndex" wx:for-item="eventsItem">
+              <view class="eventsItem">{{eventsItem}}</view>
+              </block>
+            </view>
+            
+            
+          </view>
+        </view>
+        <!-- 通知展示 -->
+        <view class="notices">
+          <view class="noticeMark">
+            <text>通知：</text>
+          </view>
+          <view class="noticeList" style="{{ isOpen ? '' : 'overflow:hidden;'}}">
+            <block wx:for="{{notices.notice}}" wx:for-index="idx">
+              <view class="noticesItem">{{item}}</view>
+            </block>
+          </view>
+          <view class="noticeArrow">
+            <image src="./img/arrow.svg" bindtap="toggleNotice" style="{{ isOpen ? 'transform: rotate(-90deg);' : '' }}" mode=""/>
+          </view>
+          
+          
+        </view>
+      </view>
+      
+    </view>
+
+    <!-- 点餐区 -->
+    <view class="order">
+    <mp-vtabs
+      vtabs = "{{vtabs}}"
+      activeTab="{{activeTab}}" 
+      bindtabclick="onTabCLick"
+      bindchange="onChange"
+      class="test"
+    >
+      
+      <!-- <block wx:for="{{vtabs}}" wx:key="id"> -->
+      <block wx:for="item.items" wx:for-item="subItem" wx:key="id">
+        <mp-vtabs-content tabIndex="{{index}}">
+          <view class="content-item">{{subItem.title}}</view>
+        </mp-vtabs-content>
+      </block>       
+      <!-- </block> -->
+      
+    
+    </mp-vtabs>     
+
+    </view>
+
+    <!-- 结算区 -->
+    <view class="payment">
+      
+    </view>
+    </view>
+  
+</view>

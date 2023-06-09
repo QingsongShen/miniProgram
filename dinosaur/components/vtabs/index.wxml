@@ -9,7 +9,7 @@
       scroll-into-view="vtabs-item__{{currentView}}"
     >
       <view class="vtabs-bar__content">
-        <block wx:for="{{vtabs}}" wx:key="title">
+        <block wx:for="{{vtabs}}" wx:key="index">
           <view 
             id="vtabs-item__{{index}}"
             class="vtabs-bar__item"
@@ -18,7 +18,7 @@
             bindtap="handleTabClick"
           >
             <view class="vtabs-bar__title {{activeTab === index ? activeClass : ''}}">
-              <text class="">{{item.title}}</text>
+              <text class="">{{item.cate}}</text>
             </view>
           </view>
         </block>
