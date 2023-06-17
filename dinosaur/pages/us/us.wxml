@@ -1,2 +1,61 @@
 <!--pages/us/us.wxml-->
-<text>pages/us/us.wxml</text>
+<view class="container">
+  <!-- 轮播图 -->
+  <view class="swiperWrapper">
+   <swiper class = "swiper"
+    indicator-dots = "true" 
+    autoplay = "true" 
+    indicator-color = "#ffffff"
+    duration = "2000"
+    >
+    <block wx:for = "{{img}}" wx:key = "index">
+      <swiper-item>
+        <image class="swiperImg" src = "{{item.src}}" mode = ""/>
+      </swiper-item>
+    </block>
+   </swiper>
+  </view>
+
+  <!-- 纪念日 -->
+  <view class="anniversary">
+    <view class="anniversaryTitle">
+      <text>纪念日</text>
+    </view>
+    <view class="anniversaryContent">
+      <view class="nowTime">
+        <view class="timeTitle">当前时间</view>
+        <view class="timeContent">{{nowTime}}</view>
+      </view>
+      <view class="firstMeet">
+        <view class="timeTitle">距我们第一次相遇</view>
+        <view class="timeContent">{{timeSinceMeet}}</view>
+      </view>
+      <view class="firstLove">
+        <view class="timeTitle">爱情的火花已经绽放</view>
+        <view class="timeContent">{{timeSinceLove}}</view>
+      </view>
+      <view class="zxcBirthday">
+        <view class="timeTitle">距离饲养员的生日还剩</view>
+        <view class="timeContent">{{timeToZxcBirthday}}</view>
+      </view>
+      <view class="dinosaurBirthday">
+        <view class="timeTitle">距离小恐龙的生日还剩</view>
+        <view class="timeContent">{{ timeToSqsBirthday }}</view>
+      </view>
+      <view class="timeToGraduate">
+        <view class="timeTitle">饲养员离职时间</view>
+        <view class="timeContent">{{tiemToGraduate}}</view>
+      </view>
+
+      
+    </view>
+  </view>
+
+  <!-- 足迹地图 -->
+
+
+
+</view>
+
+
+

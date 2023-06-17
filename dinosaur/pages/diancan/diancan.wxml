@@ -62,7 +62,7 @@
     >
       
       <!-- <block wx:for="{{vtabs}}" wx:key="id"> -->
-      <block wx:for="item.items" wx:for-item="subItem" wx:key="id">
+      <block wx:for="{{item.items}}" wx:for-item="subItem" wx:key="id">
         <mp-vtabs-content tabIndex="{{index}}">
           <view class="content-item">{{subItem.title}}</view>
         </mp-vtabs-content>
