@@ -170,11 +170,16 @@ Page({
           timeToZxcBirthday: time1
         })
         clearInterval(_this.zxcTimer)
-        setTimeout(() => {
+        _this._executeAfter24Hours(endTime, () => {
           endTime = new Date(endTime)
           endTime.setFullYear(endTime.getFullYear() + 1)
           _this._zxcBirthday(endTime)
-        },24*60*60*1000)
+        })
+        // setTimeout(() => {
+        //   endTime = new Date(endTime)
+        //   endTime.setFullYear(endTime.getFullYear() + 1)
+        //   _this._zxcBirthday(endTime)
+        // },24*60*60*1000)
       }else {
         _this.setData({
           timeToZxcBirthday: time1.day + "日" + time1.hour + "时" + time1.minute + "分" + time1.second + "秒"
@@ -205,6 +210,20 @@ Page({
         })
       }
     },1000)
+  },
+
+  // 24小时定时执行函数
+  _executeAfter24Hours(targetTime, callback){
+    let currentTime = new Date()
+    let timeDifference = new Date(targetTime).getTime() - currentTime.getTime()
+    console.log(timeDifference)
+    if(timeDifference >= -24 * 60 * 60 * 1000){
+      // 指定时间在现在或未来或尚未过去24小时，延时执行
+      let timeDifferenceNextDay = timeDifference + 24 * 60 * 60 * 1000
+      setTimeout(callback, timeDifferenceNextDay)
+    }else{
+      callback()
+    }
   },
 
 
