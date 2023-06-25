@@ -5,7 +5,7 @@ Component({
    */
   options: {
     addGlobalClass: true,
-    multipleSlots: true
+    multipleSlots: true,
   },
   properties: {
     tabIndex: {

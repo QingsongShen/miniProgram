@@ -23,7 +23,7 @@
               <image src="{{notices.events.logoPath[0]}}" mode=""/>
             </view>
             <view class="ventsItemsWrapper">
-              <block wx:for="{{notices.events.contents}}" wx:for-index="eventsIndex" wx:for-item="eventsItem">
+              <block wx:for="{{notices.events.contents}}" wx:key="index" wx:for-index="eventsIndex" wx:for-item="eventsItem">
               <view class="eventsItem">{{eventsItem}}</view>
               </block>
             </view>
@@ -36,8 +36,8 @@
           <view class="noticeMark">
             <text>通知：</text>
           </view>
-          <view class="noticeList" style="{{ isOpen ? '' : 'overflow:hidden;'}}">
-            <block wx:for="{{notices.notice}}" wx:for-index="idx">
+          <view class="noticeList" style="{{ isOpen ? 'height:auto;box-shadow: 3rpx 3rpx 3rpx lightslategrey;' : 'overflow:hidden;'}}">
+            <block wx:for="{{notices.notice}}" wx:key="index" wx:for-index="idx">
               <view class="noticesItem">{{item}}</view>
             </block>
           </view>
@@ -60,24 +60,50 @@
       bindchange="onChange"
       class="test"
     >
-      
-      <!-- <block wx:for="{{vtabs}}" wx:key="id"> -->
-      <block wx:for="{{item.items}}" wx:for-item="subItem" wx:key="id">
-        <mp-vtabs-content tabIndex="{{index}}">
-          <view class="content-item">{{subItem.title}}</view>
+      <block wx:for="{{vtabs}}" wx:for-index="tabIndex" wx:key="id">
+        <mp-vtabs-content tabIndex="{{tabIndex}}">
+          <view class="content-item">
+            <view class="itemCate">{{item.cate}}</view>            
+            <view class="items"  wx:for="{{item.items}}" wx:for-item="subItem" wx:key="index">
+              <image class="img" src="{{subItem.img}}" mode=""/>
+              <view>
+                <view class="itemInfo">
+                  <view class="itemTitle">
+                    {{subItem.title}}
+                  </view>
+                  <view class="itemDescription">
+                    {{subItem.description}}
+                  </view>
+                  <view class="itemPrice">
+                    <!-- 菜品金额 -->
+                    <view class="money">
+                      <text class="moneyLogo">¥</text>
+                      <text class="rmb">{{subItem.price}}</text>
+                    </view> 
+                    <!-- 加入购物车 -->
+                    <view class="addCart">
+                      <image class="subtractLogo" src="./img/subtract.svg" data-tabIndex="{{tabIndex}}" data-itemIndex="{{index}}" mode="" bindtap="substractSelect" wx:if="{{ subItem.select > 0 }}"/>
+                      <text class="dishCount" wx:if="{{ subItem.select > 0 }}">{{subItem.select}}</text>
+                      <image class="addLogo" src="./img/add.svg" data-tabIndex="{{tabIndex}}" data-itemIndex="{{index}}" mode="" bindtap="addSelect"/>                 
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>         
+          </view>
         </mp-vtabs-content>
-      </block>       
-      <!-- </block> -->
-      
-    
+      </block>
     </mp-vtabs>     
 
     </view>
 
     <!-- 结算区 -->
     <view class="payment">
-      
+      <mp-cart cart="{{cart}}"></mp-cart>
     </view>
-    </view>
+
+
+
+  </view>
   
 </view>

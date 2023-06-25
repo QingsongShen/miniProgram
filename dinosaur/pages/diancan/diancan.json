@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "mp-vtabs": "/components/vtabs/index",
-    "mp-vtabs-content": "/components/vtabs-content/index"
+    "mp-vtabs-content": "/components/vtabs-content/index",
+    "mp-cart": "/components/cart/cart"
   },
   "navigationStyle": "custom"
 }

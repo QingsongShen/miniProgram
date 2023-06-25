@@ -1,0 +1,72 @@
+<!--components/cart/cart.wxml-->
+<view class="container">
+  
+  <view class="cart-wrapper" >
+  <!-- 购物车logo -->
+    
+    <view class="cart-logo-wrapper" bindtap="showPopup">
+      <image src="{{cart.totalQuantity === 0? './image/cart-empty.svg':'./image/cart-full.svg'}}" class="cart-logo" mode=""/>
+      <!-- 数字图标 -->
+      <view class="redDot" hidden="{{ cart.totalQuantity === 0 }}">
+        <text>{{cart.totalQuantity > 99? "99+": cart.totalQuantity}}</text>
+      </view>
+    </view>
+    <!-- 中间价格信息栏 -->
+    <view class="info-wrapper">
+      <view class="totalPrice">
+        <text>￥：{{cart.totalPrice}}</text>
+      </view>
+      <view class="info">
+        <text>美好心情从品尝美食开始！</text>
+      </view>
+    </view>
+    <!-- 支付按钮区 -->
+    <view class="payment-wrapper">
+      <button class="paymentButton" bindtap="submitDish" disabled="{{ cart.totalQuantity === 0 }}">订单提交</button>
+    </view>
+
+    <!-- 支付弹出层 -->
+    <!-- 设置遮罩，用于关闭弹出层 -->
+    <view class="mask" bindtap="hidePopup" wx:if="{{ isPopupVisible }}"></view>
+    <van-popup 
+    show="{{ isPopupVisible }}" 
+    bind:close="onClose"
+    position="bottom"
+    custom-style="height: 30%;"
+    round
+    safe-area-tab-bar
+    overlay="{{fasle}}"
+    lock-scroll
+  >
+      <view class="popupContentWrapper">
+        <scroll-view scroll-y class="popupItemList">
+          <block wx:for="{{ cart.items }}" wx:key="index">
+            <view class="popupItemWrapper">
+              <view class="popupItemLogo">
+                <image class="itemLogo" src="{{item.img}}" mode=""/>
+              </view>
+              <view class="popupItemInfo">
+                <view class="itemTitle">
+                  <text> {{ item.title }}</text>
+                </view>
+                <view class="itemPrice">
+                  <text>￥：{{ item.price }}</text>
+                </view>
+              </view>
+              <view class="popupItemControl">
+                <!-- <image class="subtractLogo" src="./image/subtract.svg" mode="" bindtap="substractSelect" wx:if="{{ item.select > 0 }}"/> -->
+                <text class="dishCount" wx:if="{{ item.select > 0 }}">{{"份数：" + item.select}}</text>
+                <!-- <image class="addLogo" src="./image/add.svg" mode="" bindtap="addSelect"/> -->
+              </view>
+            </view>
+          </block>
+          
+        </scroll-view>
+      </view>
+  
+    </van-popup>
+    
+  </view>
+
+  
+</view>

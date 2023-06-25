@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "mp-vtabs": "/components/vtabs/index",
-    "mp-vtabs-content": "/components/vtabs-content/index"
+    "mp-vtabs-content": "/components/vtabs-content/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-popup": "@vant/weapp/popup/index"
   }
 }

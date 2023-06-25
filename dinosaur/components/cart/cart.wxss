@@ -1,0 +1,103 @@
+/* components/cart/cart.wxss */
+.container {
+  width: 750rpx;
+  height: 100rpx;
+  /* background-color: cyan; */
+}
+.cart-wrapper {
+  height: 100%;
+  padding: 0 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-logo-wrapper {
+  position: relative;
+}
+.cart-logo {
+  width: 100rpx;
+  height: 100rpx;
+}
+.redDot{
+  height: 40rpx;
+  width: 40rpx;
+  background-color: red;
+  opacity: 0.9;
+  border-radius: 50%;
+  color: white;
+  font-size: 23rpx;
+  line-height: 40rpx;
+  text-align: center;
+  position: absolute;
+  top: 15rpx;
+  right: -10rpx;
+}
+
+.info-wrapper {
+  font-size: 25rpx;
+  line-height: 45rpx;
+  padding-right: 70rpx;
+}
+
+.paymentButton{
+  padding: 10rpx;
+  font-size: 25rpx;
+  width: 150rpx !important;
+  border-radius: 20rpx;
+  background-color: lightgreen;
+}
+
+
+/* 弹出层样式 */
+.popupContentWrapper {
+  /* background-color: red; */    /* 此处小问题，底部留空无法取消 */
+  padding-top: 20rpx;
+  height: auto;
+}
+
+.popupItemWrapper{
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popupContentWrapper .popupItemList{
+}
+
+.popupItemWrapper .popupItemInfo{
+  padding-right: 200rpx;
+  line-height: 85rpx;
+}
+
+.itemLogo{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 10rpx;
+}
+
+.popupItemControl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 50rpx;
+}
+
+.dishCount {
+  margin: 0 10rpx;
+}
+.subtractLogo, .addLogo {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
